@@ -19,7 +19,7 @@ return {
         visible = true,
         hide_dotfiles = false,
         hide_gitignored = false,
-        -- enable_git_status = true,
+        enable_git_status = true,
       },
       window = {
         mappings = {
@@ -28,4 +28,13 @@ return {
       },
     },
   },
+
+  config = function()
+    vim.cmd [[
+      highlight NeoTreeNormal guibg=NONE ctermbg=NONE
+      highlight NeoTreeNormalNC guibg=NONE ctermbg=NONE
+      highlight NeoTreeEndOfBuffer guibg=NONE ctermbg=NONE
+      highlight NeoTreeWinSeparator guibg=NONE ctermbg=NONE
+    ]]
+  end,
 }
