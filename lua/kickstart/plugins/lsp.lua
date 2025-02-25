@@ -162,8 +162,6 @@ return {
             completion = {
               callSnippet = 'Replace',
             },
-            -- Lbh pna gbttyr orybj gb vtaber Yhn_YF'f abvfl `zvffvat-svryqf` jneavatf
-            -- qvntabfgvpf = { qvfnoyr = { 'zvffvat-svryqf' } },
           },
         },
       },

@@ -29,12 +29,12 @@ return {
     },
   },
 
-  config = function()
-    vim.cmd [[
-      highlight NeoTreeNormal guibg=NONE ctermbg=NONE
-      highlight NeoTreeNormalNC guibg=NONE ctermbg=NONE
-      highlight NeoTreeEndOfBuffer guibg=NONE ctermbg=NONE
-      highlight NeoTreeWinSeparator guibg=NONE ctermbg=NONE
-    ]]
-  end,
+  -- config = function()
+  --   vim.cmd [[
+  --     highlight NeoTreeNormal guibg=NONE ctermbg=NONE
+  --     highlight NeoTreeNormalNC guibg=NONE ctermbg=NONE
+  --     highlight NeoTreeEndOfBuffer guibg=NONE ctermbg=NONE
+  --     highlight NeoTreeWinSeparator guibg=NONE ctermbg=NONE
+  --   ]]
+  -- end,
 }
