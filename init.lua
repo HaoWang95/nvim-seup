@@ -1,3 +1,10 @@
+-- [[ Configure and install plugins ]]
+--  To check the current status of your plugins, run
+--    :Lazy
+--  You can press `?` in this menu for help. Use `:q` to close the window
+--  To update plugins you can run
+--    :Lazy update
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -64,12 +71,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
--- [[ Configure and install plugins ]]
---  To check the current status of your plugins, run
---    :Lazy
---  You can press `?` in this menu for help. Use `:q` to close the window
---  To update plugins you can run
---    :Lazy update
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
@@ -99,7 +100,8 @@ require('lazy').setup({
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
-  { -- Collection of various small independent plugins/modules
+  -- Collection of various small independent plugins/modules
+  {
     'echasnovski/mini.nvim',
     config = function()
       -- Better Around/Inside textobjects
