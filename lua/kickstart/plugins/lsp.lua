@@ -138,7 +138,18 @@ return {
           },
         },
       },
-      pyright = {},
+      pyright = {
+        settings = {
+          python = {
+            analysis = {
+              typeCheckingMode = 'basic',
+              reportUnusedVariable = false,
+              reportUnusedKeyword = false,
+              reportUnusedFunction = false,
+            },
+          },
+        },
+      },
       rust_analyzer = {},
       bashls = {},
       html = {},

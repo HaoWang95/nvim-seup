@@ -40,6 +40,7 @@ return { -- Autoformat
       -- Conform can also run multiple formatters sequentially
       python = { 'isort', 'black', stop_after_first = true },
       html = { 'prettier' },
+      htmldjango = { 'djlint' },
       javascript = { 'prettier' },
       json = { 'prettier' },
       typescript = { 'prettier' },
