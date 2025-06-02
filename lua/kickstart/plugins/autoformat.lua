@@ -42,6 +42,8 @@ return { -- Autoformat
       html = { 'prettier' },
       htmldjango = { 'djlint' },
       javascript = { 'prettier' },
+      jsx = { 'prettier' },
+      tsx = { 'prettier' },
       json = { 'prettier' },
       typescript = { 'prettier' },
       markdown = { 'prettier' },

@@ -146,6 +146,7 @@ return {
               reportUnusedVariable = false,
               reportUnusedKeyword = false,
               reportUnusedFunction = false,
+              reportArgumentType = false,
             },
           },
         },
