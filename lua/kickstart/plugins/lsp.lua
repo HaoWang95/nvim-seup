@@ -105,6 +105,12 @@ return {
         end
       end,
     })
+    -- vim.api.nvim_create_autocmd('FileType', {
+    --   pattern = 'java',
+    --   callback = function()
+    --     require 'kickstart.plugins.lsp.java'
+    --   end,
+    -- })
 
     -- LSP servers and clients are able to communicate to each other what features they support.
     --  By default, Neovim doesn't support everything that is in the LSP specification.
