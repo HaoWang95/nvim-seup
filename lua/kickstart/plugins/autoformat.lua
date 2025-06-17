@@ -46,15 +46,23 @@ return { -- Autoformat
       tsx = { 'prettier' },
       json = { 'prettier' },
       typescript = { 'prettier' },
-      markdown = { 'prettier' },
+      -- markdown = { 'prettier' },
+      markdown = { 'markdownlint-cli2' },
       ruby = { 'rufo' },
       eruby = { 'erb_format' },
       go = { 'gofmt' },
       c = { 'clang_format' },
       cpp = { 'clang_format' },
-      --
-      -- You can use 'stop_after_first' to run the first available formatter from the list
-      -- javascript = { "prettierd", "prettier", stop_after_first = true },
+    },
+    formatters = {
+      markdownlint = {
+        command = 'markdownlint-cli2',
+        args = {
+          '$FILENAME',
+          '--fix',
+        },
+        stdin = false,
+      },
     },
   },
 }
