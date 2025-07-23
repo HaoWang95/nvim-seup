@@ -53,7 +53,7 @@ return { -- Autoformat
       go = { 'gofmt' },
       c = { 'clang_format' },
       cpp = { 'clang_format' },
-      java = { 'google-java-format' },
+      -- java = { 'google-java-format' },
     },
     formatters = {
       markdownlint = {
