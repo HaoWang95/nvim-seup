@@ -209,15 +209,53 @@ return {
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
+    -- require('mason-lspconfig').setup {
+    --   handlers = {
+    --     function(server_name)
+    --       local server = servers[server_name] or {}
+    --       -- This handles overriding only values explicitly passed
+    --       -- by the server configuration above. Useful when disabling
+    --       -- certain features of an LSP (for example, turning off formatting for ts_ls)
+    --       server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+    --       require('lspconfig')[server_name].setup(server)
+    --       -- vim.lsp.config['server_name'].setup(server)
+    --     end,
+    --   },
+    -- }
+
+    -- Assumptions:
+    --   - Neovim >= 0.11, the above setup will be deprecated
+    --   - you already have `servers` table with your per-server overrides
+    --   - you already defined `capabilities` and (optionally) `on_attach`
+
     require('mason-lspconfig').setup {
       handlers = {
         function(server_name)
-          local server = servers[server_name] or {}
-          -- This handles overriding only values explicitly passed
-          -- by the server configuration above. Useful when disabling
-          -- certain features of an LSP (for example, turning off formatting for ts_ls)
-          server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-          require('lspconfig')[server_name].setup(server)
+          -- mason-lspconfig still gives you upstream names (e.g. "tsserver")
+          -- Neovim 0.11’s built-in config uses "ts_ls"
+          local name_map = { tsserver = 'ts_ls' }
+          local builtin_name = name_map[server_name] or server_name
+
+          -- Pull your per-server overrides. Prefer the builtin_name key if you changed it.
+          local user_cfg = vim.tbl_deep_extend(
+            'force',
+            {},
+            -- allow either key in your `servers` table
+            servers[builtin_name] or {},
+            servers[server_name] or {}
+          )
+
+          -- Merge capabilities the same way you did before
+          user_cfg.capabilities = vim.tbl_deep_extend('force', {}, capabilities or vim.lsp.protocol.make_client_capabilities(), user_cfg.capabilities or {})
+
+          -- (Optional) If you used lspconfig’s root_dir funcs, prefer root_markers now.
+          -- Example: if you had `root_dir = util.root_pattern("go.work", "go.mod", ".git")`,
+          -- replace with: `root_markers = { "go.work", "go.mod", ".git" }`
+          -- The built-in API understands `root_markers` directly.
+
+          -- Define the config by name, then enable (auto-start on matching buffers)
+          vim.lsp.config(builtin_name, user_cfg)
+          vim.lsp.enable(builtin_name)
         end,
       },
     }
