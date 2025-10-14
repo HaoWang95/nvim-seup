@@ -1,0 +1,5 @@
+WRN 2025-10-14T11:13:15.156 ?.90744    server_start:193: Failed to start server: operation not permitted: /var/folders/yn/j6lm886s6wd879q7j8b27pc40000gn/T/nvim.allenwang/B0iO4t/nvim.90744.0
+WRN 2025-10-14T11:13:19.137 ?.91105    server_start:193: Failed to start server: operation not permitted: /var/folders/yn/j6lm886s6wd879q7j8b27pc40000gn/T/nvim.allenwang/S8nF8T/nvim.91105.0
+WRN 2025-10-14T11:13:20.897 ?.91156    server_start:193: Failed to start server: operation not permitted: /var/folders/yn/j6lm886s6wd879q7j8b27pc40000gn/T/nvim.allenwang/cVRyPE/nvim.91156.0
+WRN 2025-10-14T11:13:29.833 ?.91570    server_start:193: Failed to start server: operation not permitted: /var/folders/yn/j6lm886s6wd879q7j8b27pc40000gn/T/nvim.allenwang/om7EMQ/nvim.91570.0
+WRN 2025-10-14T11:19:41.493 ?.7740     server_start:193: Failed to start server: operation not permitted: /var/folders/yn/j6lm886s6wd879q7j8b27pc40000gn/T/nvim.allenwang/auSR8z/nvim.7740.0

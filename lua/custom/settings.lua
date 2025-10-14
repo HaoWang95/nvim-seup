@@ -66,3 +66,18 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 
 vim.opt.showtabline = 2
+
+-- Prefer four-space indentation for C-family buffers so manual edits
+-- align with the clang-format result that runs on save.
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'c', 'cpp', 'objc', 'objcpp' },
+  callback = function()
+    vim.opt_local.expandtab = true
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.tabstop = 4
+    vim.opt_local.softtabstop = 4
+  end,
+})
+
+-- Use compact diagnostic glyphs; show warnings as a yellow exclamation mark.
+vim.fn.sign_define('DiagnosticSignWarn', { text = '!', texthl = 'DiagnosticSignWarn', numhl = '' })
