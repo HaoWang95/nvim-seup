@@ -149,25 +149,25 @@ require('lazy').setup({
   --  Here are some example plugins that I've included in the Kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
-  require 'kickstart.plugins.debug',
-  require 'kickstart.plugins.indent_line',
-  require 'kickstart.plugins.lsp',
-  -- require 'kickstart.plugins.jdtls',
-  require 'kickstart.plugins.lint',
-  require 'kickstart.plugins.autopairs',
-  require 'kickstart.plugins.autoformat',
-  require 'kickstart.plugins.autocomplete',
-  require 'kickstart.plugins.treesitter',
-  require 'kickstart.plugins.neo-tree',
-  require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
-  require 'kickstart.plugins.markdown-preview', -- adds the markdown preview feature
-  require 'kickstart.plugins.whichkeys',
-  require 'kickstart.plugins.telescope',
-  require 'kickstart.plugins.themes.catppuccin',
-  require 'kickstart.plugins.themes.onedarkpro',
-  require 'kickstart.plugins.themes.tokyonight',
+  require 'custom.plugins.debug',
+  require 'custom.plugins.indent_line',
+  require 'custom.plugins.lsp',
+  -- require 'custom.plugins.jdtls',
+  require 'custom.plugins.lint',
+  require 'custom.plugins.autopairs',
+  require 'custom.plugins.autoformat',
+  require 'custom.plugins.autocomplete',
+  require 'custom.plugins.treesitter',
+  require 'custom.plugins.neo-tree',
+  require 'custom.plugins.gitsigns', -- adds gitsigns recommend keymaps
+  require 'custom.plugins.markdown-preview', -- adds the markdown preview feature
+  require 'custom.plugins.whichkeys',
+  require 'custom.plugins.telescope',
+  require 'custom.plugins.themes.catppuccin',
+  require 'custom.plugins.themes.onedarkpro',
+  require 'custom.plugins.themes.tokyonight',
 
-  --  require 'kickstart.plugins.tabdisplay',
+  --  require 'custom.plugins.tabdisplay',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
